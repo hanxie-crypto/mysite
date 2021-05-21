@@ -1,7 +1,7 @@
 edition: 1.0.0
 name: jamstack-website
 vars:
-  domain: testblog.resume.net.cn
+  domain: mystie1.resume.net.cn
 services:
   # api: 
   #   component: fc-api
@@ -12,18 +12,18 @@ services:
     actions:
       pre-deploy:
         - run: npm i
-          path: ${path(.)}/devsblog
+          path: ${path(.)}/myportal
     props:
       domain: ${vars.domain}
       favicon: false
-      defaultApp: devsblog
+      defaultApp: myportal
       apps:
-        - name: devsblog
+        - name: myportal
           type: jamstack
-          sourceCode: ${path(.)}/devsblog
+          sourceCode: ${path(.)}/myportal
           paths:
             - /
-            - /~devsblog
+            - /~myportal
           indexFile: index.html
           page404Url:  404.html
         # - name: backendapi
